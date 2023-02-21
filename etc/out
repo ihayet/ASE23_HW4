@@ -2,8 +2,46 @@
 ✅ pass: the
 ✅ pass: sym
 ✅ pass: num
+b4	{:a 1 :b {'c': 2, 'd': [3]}}
+after	{:a 1 :b {'c': 2, 'd': [10000]}}
 ✅ pass: copy
+{a NUM :at 0 :hi 5 :lo 1 :m2 13.5 :mu 1.75 :n 8 :txt ElectronicPublishing}
+{a NUM :at 1 :hi 5 :lo 1 :m2 17.875 :mu 2.375 :n 8 :txt VirtualReality}
+{a NUM :at 2 :hi 3 :lo 1 :m2 6.0 :mu 1.5 :n 8 :txt MultimediaAndHypermedia}
+{a NUM :at 3 :hi 5 :lo 1 :m2 18.875 :mu 2.125 :n 8 :txt VisualProgramming}
+{a NUM :at 4 :hi 5 :lo 1 :m2 14.875 :mu 1.875 :n 8 :txt CrossPlatformGUIs}
+{a NUM :at 5 :hi 5 :lo 1 :m2 32.0 :mu 3.0 :n 8 :txt ObjectOrientedSystems}
+{a NUM :at 6 :hi 5 :lo 1 :m2 20.0 :mu 3.5 :n 8 :txt KnowledgeBasedSystems}
+{a NUM :at 7 :hi 5 :lo 2 :m2 10.875 :mu 4.125 :n 8 :txt IntelligentAgents}
+{a NUM :at 8 :hi 5 :lo 1 :m2 16.0 :mu 2.5 :n 8 :txt InformationHighway}
+{a NUM :at 9 :hi 5 :lo 1 :m2 15.875 :mu 2.375 :n 8 :txt BroadbandNetworks}
+{a ROW :cells [5, 3, 3, 1, 1, 1, 1, 3, 5, 5, 'DevelopmentTool:Application']}
+{a ROW :cells [2, 1, 1, 5, 5, 5, 5, 5, 1, 2, 'Multimedia:Programming']}
+{a ROW :cells [1, 3, 1, 3, 2, 5, 4, 3, 1, 1, 'CommunicationTechnology:ApplicationTechnology']}
+{a ROW :cells [2, 1, 1, 1, 3, 5, 3, 2, 2, 2, 'HumanOrientedTool:SystemTool']}
+{a ROW :cells [1, 5, 3, 4, 1, 1, 4, 5, 4, 4, 'ConventionalCommunication:NovelCommunication']}
+{a ROW :cells [1, 4, 1, 1, 1, 1, 1, 5, 3, 1, 'OnlyActAsProgrammed:Semi-autonomous']}
+{a ROW :cells [1, 1, 1, 1, 1, 1, 5, 5, 1, 1, 'ConventionalSystem:IntelligentSystem']}
+{a ROW :cells [1, 1, 1, 1, 1, 5, 5, 5, 3, 3, 'TargetedOnInterface:TargetedOnOverallSystem']}
 ✅ pass: repcols
+{a NUM :at 0 :hi 5 :lo 1 :m2 27.6 :mu 2.8 :n 10 :txt DevelopmentTool:Application}
+{a NUM :at 1 :hi 5 :lo 1 :m2 33.6 :mu 3.2 :n 10 :txt Multimedia:Programming}
+{a NUM :at 2 :hi 5 :lo 1 :m2 18.4 :mu 2.4 :n 10 :txt CommunicationTechnology:ApplicationTechnology}
+{a NUM :at 3 :hi 5 :lo 1 :m2 13.6 :mu 2.2 :n 10 :txt HumanOrientedTool:SystemTool}
+{a NUM :at 4 :hi 5 :lo 1 :m2 23.6 :mu 3.2 :n 10 :txt ConventionalCommunication:NovelCommunication}
+{a NUM :at 5 :hi 5 :lo 1 :m2 20.9 :mu 1.9 :n 10 :txt OnlyActAsProgrammed:Semi-autonomous}
+{a NUM :at 6 :hi 5 :lo 1 :m2 25.6 :mu 1.8 :n 10 :txt ConventionalSystem:IntelligentSystem}
+{a NUM :at 7 :hi 5 :lo 1 :m2 30.4 :mu 2.6 :n 10 :txt TargetedOnInterface:TargetedOnOverallSystem}
+{a ROW :cells [5, 2, 1, 2, 1, 1, 1, 1, 'ElectronicPublishing']}
+{a ROW :cells [3, 1, 3, 1, 5, 4, 1, 1, 'VirtualReality']}
+{a ROW :cells [3, 1, 1, 1, 3, 1, 1, 1, 'MultimediaAndHypermedia']}
+{a ROW :cells [1, 5, 3, 1, 4, 1, 1, 1, 'VisualProgramming']}
+{a ROW :cells [1, 5, 2, 3, 1, 1, 1, 1, 'CrossPlatformGUIs']}
+{a ROW :cells [1, 5, 5, 5, 1, 1, 1, 5, 'ObjectOrientedSystems']}
+{a ROW :cells [1, 5, 4, 3, 4, 1, 5, 5, 'KnowledgeBasedSystems']}
+{a ROW :cells [3, 5, 3, 2, 5, 5, 5, 5, 'IntelligentAgents']}
+{a ROW :cells [5, 1, 1, 2, 4, 3, 1, 3, 'InformationHighway']}
+{a ROW :cells [5, 2, 1, 2, 4, 1, 1, 3, 'BroadbandNetworks']}
 ✅ pass: reprows
 74.0
 |.. 51.0
@@ -41,6 +79,16 @@
 |.. |.. |.. |.. VirtualReality
 |.. |.. |.. |.. InformationHighway
 ✅ pass: prototypes
+A ElectronicPublishing
+B VirtualReality
+C MultimediaAndHypermedia
+D VisualProgramming
+E CrossPlatformGUIs
+F ObjectOrientedSystems
+G KnowledgeBasedSystems
+H IntelligentAgents
+I InformationHighway
+J BroadbandNetworks
 {E                           H          }
 {                                       }
 {                                       }
@@ -87,6 +135,16 @@
 |.. |.. 49.0
 |.. |.. |.. Multimedia:Programming
 |.. |.. |.. TargetedOnInterface:TargetedOnOverallSystem
+A ElectronicPublishing
+B VirtualReality
+C MultimediaAndHypermedia
+D VisualProgramming
+E CrossPlatformGUIs
+F ObjectOrientedSystems
+G KnowledgeBasedSystems
+H IntelligentAgents
+I InformationHighway
+J BroadbandNetworks
 {E                           H          }
 {                                       }
 {                                       }

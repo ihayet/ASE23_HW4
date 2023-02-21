@@ -163,8 +163,13 @@ def copy_test():
     t1 = { 'a': 1, 'b': { 'c': 2, 'd': [3] } }
     t2 = copy(t1)
     t2['b']['d'][0] = 10000
-        
-    print('b4', o(t1), '\nafter', o(t2))
+            
+    print('b4\t', end='')
+    get_ofile().write('b4\t')
+    oo(t1)
+    print('\nafter\t')
+    get_ofile().write('after\t')
+    oo(t2)
 
     return 0
 
@@ -174,12 +179,14 @@ def repcols_test():
     try:
         for col in t.cols.xcols:
             print('{' + 'a NUM' + ' :at {}'.format(col.get_pos()) + ' :hi {}'.format(col.hi) + ' :lo {}'.format(col.lo) + ' :m2 {}'.format(rnd(col.m2, 3)) + ' :mu {}'.format(rnd(col.mu), 3) + ' :n {}'.format(col.total) + ' :txt {}'.format(col.get_name()) + '}')
+            get_ofile().write('{' + 'a NUM' + ' :at {}'.format(col.get_pos()) + ' :hi {}'.format(col.hi) + ' :lo {}'.format(col.lo) + ' :m2 {}'.format(rnd(col.m2, 3)) + ' :mu {}'.format(rnd(col.mu), 3) + ' :n {}'.format(col.total) + ' :txt {}'.format(col.get_name()) + '}\n')
     except Exception:
         pass
 
     try:
         for row in t.rows:
             print('{' + 'a ROW :cells ' + str(row.cells) + '}')
+            get_ofile().write('{' + 'a ROW :cells ' + str(row.cells) + '}\n')
     except Exception:
         pass
 
@@ -191,12 +198,14 @@ def reprows_test():
     try:
         for col in t.cols.xcols:
             print('{' + 'a NUM' + ' :at {}'.format(col.get_pos()) + ' :hi {}'.format(col.hi) + ' :lo {}'.format(col.lo) + ' :m2 {}'.format(rnd(col.m2, 3)) + ' :mu {}'.format(rnd(col.mu), 3) + ' :n {}'.format(col.total) + ' :txt {}'.format(col.get_name()) + '}')
+            get_ofile().write('{' + 'a NUM' + ' :at {}'.format(col.get_pos()) + ' :hi {}'.format(col.hi) + ' :lo {}'.format(col.lo) + ' :m2 {}'.format(rnd(col.m2, 3)) + ' :mu {}'.format(rnd(col.mu), 3) + ' :n {}'.format(col.total) + ' :txt {}'.format(col.get_name()) + '}\n')
     except Exception:
         pass
 
     try:
         for row in t.rows:
             print('{' + 'a ROW :cells ' + str(row.cells) + '}')
+            get_ofile().write('{' + 'a ROW :cells ' + str(row.cells) + '}\n')
     except Exception:
         pass
 

@@ -1,7 +1,7 @@
 import re
 import os
 from DATA import DATA
-from utils import last
+from utils import last, get_ofile
 from strings import oo, show
 
 def clean(val):
@@ -95,6 +95,7 @@ def repplace(data):
     for r, row in enumerate(allrows):
         c = chr(65 + r)
         print(c, last(row.cells))
+        get_ofile().write(c + ' ' + last(row.cells) + '\n')
         x, y = int(rowxy[last(row.cells)]['x']*n), int(rowxy[last(row.cells)]['y']*n)
 
         maxy = max(maxy, y)
