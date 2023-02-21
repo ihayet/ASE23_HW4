@@ -1,0 +1,101 @@
+{:dump false :file etc/data/repgrid1.csv :go all :help false :p 2 :seed 937162211}
+✅ pass: the
+✅ pass: sym
+✅ pass: num
+✅ pass: copy
+✅ pass: repcols
+✅ pass: reprows
+74.0
+|.. 51.0
+|.. |.. 30.0
+|.. |.. |.. HumanOrientedTool:SystemTool
+|.. |.. |.. CommunicationTechnology:ApplicationTechnology
+|.. |.. 49.0
+|.. |.. |.. Multimedia:Programming
+|.. |.. |.. TargetedOnInterface:TargetedOnOverallSystem
+|.. 61.0
+|.. |.. 54.0
+|.. |.. |.. ConventionalCommunication:NovelCommunication
+|.. |.. |.. DevelopmentTool:Application
+|.. |.. 43.0
+|.. |.. |.. ConventionalSystem:IntelligentSystem
+|.. |.. |.. OnlyActAsProgrammed:Semi-autonomous
+✅ pass: synonyms
+74.0
+|.. 48.0
+|.. |.. 46.0
+|.. |.. |.. CrossPlatformGUIs
+|.. |.. |.. ElectronicPublishing
+|.. |.. 75.0
+|.. |.. |.. ObjectOrientedSystems
+|.. |.. |.. 44.0
+|.. |.. |.. |.. MultimediaAndHypermedia
+|.. |.. |.. |.. VisualProgramming
+|.. 65.0
+|.. |.. 42.0
+|.. |.. |.. IntelligentAgents
+|.. |.. |.. KnowledgeBasedSystems
+|.. |.. 43.0
+|.. |.. |.. BroadbandNetworks
+|.. |.. |.. 34.0
+|.. |.. |.. |.. VirtualReality
+|.. |.. |.. |.. InformationHighway
+✅ pass: prototypes
+{E                           H          }
+{                                       }
+{                                       }
+{                                       }
+{                                       }
+{      D                                }
+{                  G                    }
+{                                       }
+{      F                                }
+{  A C     J                            }
+{              I                        }
+✅ pass: position
+74.0
+|.. 48.0
+|.. |.. 46.0
+|.. |.. |.. CrossPlatformGUIs
+|.. |.. |.. ElectronicPublishing
+|.. |.. 75.0
+|.. |.. |.. ObjectOrientedSystems
+|.. |.. |.. 44.0
+|.. |.. |.. |.. MultimediaAndHypermedia
+|.. |.. |.. |.. VisualProgramming
+|.. 65.0
+|.. |.. 42.0
+|.. |.. |.. IntelligentAgents
+|.. |.. |.. KnowledgeBasedSystems
+|.. |.. 43.0
+|.. |.. |.. BroadbandNetworks
+|.. |.. |.. 34.0
+|.. |.. |.. |.. VirtualReality
+|.. |.. |.. |.. InformationHighway
+74.0
+|.. 61.0
+|.. |.. 54.0
+|.. |.. |.. ConventionalCommunication:NovelCommunication
+|.. |.. |.. DevelopmentTool:Application
+|.. |.. 43.0
+|.. |.. |.. ConventionalSystem:IntelligentSystem
+|.. |.. |.. OnlyActAsProgrammed:Semi-autonomous
+|.. 51.0
+|.. |.. 30.0
+|.. |.. |.. HumanOrientedTool:SystemTool
+|.. |.. |.. CommunicationTechnology:ApplicationTechnology
+|.. |.. 49.0
+|.. |.. |.. Multimedia:Programming
+|.. |.. |.. TargetedOnInterface:TargetedOnOverallSystem
+{E                           H          }
+{                                       }
+{                                       }
+{                                       }
+{                                       }
+{      D                                }
+{                  G                    }
+{                                       }
+{      F                                }
+{  A C     J                            }
+{              I                        }
+✅ pass: every

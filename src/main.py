@@ -4,9 +4,9 @@ import sys
 import os
 from strings import fmt, coerce
 from utils import getThe, setThe, setSeed, get_ofile, rint
-from test import settings_test, rand_test, sym_test, num_test, csv_test, data_test, stats_test, clone_test, around_test, half_test, cluster_test, optimize_test
+from test import settings_test, rand_test, sym_test, num_test, csv_test, data_test, stats_test, clone_test, around_test, half_test, cluster_test, optimize_test, copy_test, repcols_test, reprows_test, synonyms_test, prototypes_test, position_test, every_test
 
-help = 'script.lua : an example script with help text and a test suite\n (c)2022, Tim Menzies <timm@ieee.org>, BSD-2\n USAGE:   script.lua  [OPTIONS] [-g ACTION] \n OPTIONS: \n -d  --dump  on crash, dump stack = false \n -f  --file  name of file = etc/data/auto93.csv \n -F  --Far  distance to "faraway" = 0.95 \n -g  --go    start-up action      = data \n -h  --help  show help            = false \n -m  --min  stop clusters at N^min = 0.5 \n -p  --p  distance coefficient = 2 \n -s  --seed  random number seed   = 937162211 \n -S  --Sample  sampling data size = 512 \n ACTIONS:\n'
+help = 'script.lua : an example script with help text and a test suite\n (c)2022, Tim Menzies <timm@ieee.org>, BSD-2\n USAGE:   script.lua  [OPTIONS] [-g ACTION] \n OPTIONS: \n -d  --dump  on crash, dump stack = false \n -f  --file  name of file = etc/data/repgrid1.csv \n -g  --go    start-up action      = data \n -h  --help  show help            = false \n -p  --p  distance coefficient = 2 \n -s  --seed  random number seed   = 937162211\n ACTIONS:\n'
 
 env_b4 = {}
 for env in os.environ:
@@ -50,17 +50,32 @@ def eg(key, str, fun):
     help = help + fmt(" -g %s\t%s\n", key, str)
 
 def main(options, help, funs):
+    # HW1
     eg("the","show settings", settings_test)
-    #eg("rand","generate, reset, regenerate same", rand_test)
+    # eg("rand","generate, reset, regenerate same", rand_test)
     eg("sym","check syms", sym_test)
     eg("num", "check nums", num_test)
-    #eg("csv", "read from csv", csv_test)
-    eg("data", "read DATA csv", data_test)
-    eg("clone", "duplicate structure", clone_test)
-    eg("around", "sorting nearest neighbors", around_test)
-    eg("half", "1-level bi-clustering", half_test)
-    eg("cluster", "N-level bi-clustering", cluster_test)
-    eg("optimize", "semi-supervised optimization", optimize_test)
+    
+    # HW2
+    # eg("csv", "read from csv", csv_test)
+    # eg("data", "read DATA csv", data_test)
+    # eg("clone", "duplicate structure", clone_test)
+
+    # HW3
+    # eg("around", "sorting nearest neighbors", around_test)
+    # eg("half", "1-level bi-clustering", half_test)
+    # eg("cluster", "N-level bi-clustering", cluster_test)
+    # eg("optimize", "semi-supervised optimization", optimize_test)
+    
+    # HW4
+    eg('copy', 'check copy', copy_test)
+    eg('repcols', 'checking repcols', repcols_test)
+    eg('reprows', 'checking reprows', reprows_test)
+    eg('synonyms', 'checking repcols cluster', synonyms_test)
+    eg('prototypes', 'checking reprows cluster', prototypes_test)
+    eg('position', 'where\'s wally', position_test)
+    eg('every', 'the whole enchilada', every_test)
+    
 
     o_file = get_ofile()
     err = 0

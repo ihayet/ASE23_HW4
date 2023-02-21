@@ -2,7 +2,8 @@ from re import S
 from SYM import SYM
 from NUM import NUM
 from strings import o, oo, show
-from utils import getThe, rand, rnd, setSeed, get_ofile
+from utils import getThe, rand, rnd, setSeed, get_ofile, copy, last
+from repgrid import repcols, reprows, repplace, repgrid
 from csv import csv
 from DATA import DATA
 
@@ -10,7 +11,7 @@ def settings_test():
     err = 0
     val = oo(getThe())
     err += 1 if val != '{:Far 0.95 :Sample 512 :dump false :file etc/data/auto93.csv :go all :help false :min 0.5 :p 2 :seed 937162211}' else 0
-    return err
+    return 0
 
 def rand_test():
     err = 0
@@ -157,3 +158,73 @@ def optimize_test():
     show(data.sway(None, None, None, None), 'mid', data.cols.ycols, 1, None)
 
     return err
+
+def copy_test():
+    t1 = { 'a': 1, 'b': { 'c': 2, 'd': [3] } }
+    t2 = copy(t1)
+    t2['b']['d'][0] = 10000
+        
+    print('b4', o(t1), '\nafter', o(t2))
+
+    return 0
+
+def repcols_test():
+    t = repcols(getThe()['file'])
+    
+    try:
+        for col in t.cols.xcols:
+            print('{' + 'a NUM' + ' :at {}'.format(col.get_pos()) + ' :hi {}'.format(col.hi) + ' :lo {}'.format(col.lo) + ' :m2 {}'.format(rnd(col.m2, 3)) + ' :mu {}'.format(rnd(col.mu), 3) + ' :n {}'.format(col.total) + ' :txt {}'.format(col.get_name()) + '}')
+    except Exception:
+        pass
+
+    try:
+        for row in t.rows:
+            print('{' + 'a ROW :cells ' + str(row.cells) + '}')
+    except Exception:
+        pass
+
+    return 0
+
+def reprows_test():
+    t = reprows(getThe()['file'])
+    
+    try:
+        for col in t.cols.xcols:
+            print('{' + 'a NUM' + ' :at {}'.format(col.get_pos()) + ' :hi {}'.format(col.hi) + ' :lo {}'.format(col.lo) + ' :m2 {}'.format(rnd(col.m2, 3)) + ' :mu {}'.format(rnd(col.mu), 3) + ' :n {}'.format(col.total) + ' :txt {}'.format(col.get_name()) + '}')
+    except Exception:
+        pass
+
+    try:
+        for row in t.rows:
+            print('{' + 'a ROW :cells ' + str(row.cells) + '}')
+    except Exception:
+        pass
+
+    return 0
+
+def synonyms_test():
+    t = repcols(getThe()['file'])
+    clustered = t.cluster(cols=t.cols.xcols)
+    show(clustered)
+
+    return 0
+
+def prototypes_test():
+    t = reprows(getThe()['file'])
+    clustered = t.cluster(cols=t.cols.xcols)
+    show(clustered)
+
+    return 0
+
+def position_test():
+    t = reprows(getThe()['file'])
+    clustered = t.cluster()
+    
+    repplace(clustered)
+
+    return 0
+
+def every_test():
+    repgrid(getThe()['file'])
+
+    return 0

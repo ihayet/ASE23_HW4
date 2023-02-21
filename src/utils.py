@@ -1,4 +1,5 @@
 import math
+from lists import kap
 
 the = {}
 o_file = None
@@ -21,7 +22,6 @@ def rand(lo, hi):
 
 def rnd(n, nPlaces=3):
   return round(n, nPlaces)
-
 
 def getThe():
   global the 
@@ -59,8 +59,21 @@ def many(t, sample_size):
       u.append(val)
   return u
 
+def last(t):
+  return t[len(t)-1]
+
 def cosine(a, b, c):
   x1 = (a**2 + c**2 - b**2)/(2*c+1e-32)
   x2 = max(0, min(1, x1))
-  y = (a**2 - x2**2)**0.5
+  y = abs(a**2 - x2**2)**0.5
   return x2, y
+
+def copy(t):
+  def fun(k, v):
+    return copy(v), copy(k)
+  
+  if isinstance(t, dict) or isinstance(t, list):
+    u = kap(t, fun)
+    return u
+  else:
+    return t

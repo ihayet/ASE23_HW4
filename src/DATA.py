@@ -2,11 +2,11 @@ from COLS import COLS
 from ROW import ROW
 from csv import csv
 from lists import map, kap, sort
-from utils import getThe, cosine, many, any
+from utils import getThe, cosine, many, any, last
 import math
 
 class DATA:
-    def __init__(self, src, cols, rows):
+    def __init__(self, src, cols=None, rows=None):
         self.rows, self.cols = [], None
         map(csv(src), lambda x: self.add(x)) if src is not None else map(cols+rows, lambda x: self.add(x))            
 
@@ -51,35 +51,34 @@ class DATA:
             ret['row'] = row2
             ret['dist'] = self.dist(row1, row2, self.cols.xcols)
             return ret, None
+        
         mapped_val = map(rows if rows is not None else self.rows, fun)
         sorted_val = sort(mapped_val, 'dist')
 
-        return dict(sorted_val)
+        return sorted_val
+
+    def furthest(self, row1, rows):
+        t = self.around(row1, rows)
+        return t[len(t)-1]
 
     def half(self, rows, cols, above):
         A, B, c = 0, 0, 0
         left, right = [], []
         def project(row):
+            x, y = cosine(self.dist(row, A, cols), self.dist(row, B, cols), c)
             ret = {}
+            row.x, row.y = x, y
             ret['row'] = row
-            ret['dist'] = cosine(self.dist(row, A, cols), self.dist(row, B, cols), c)
+            ret['dist'] = x
             return ret, None
         rows = rows if rows is not None else self.rows
-        some = many(rows, getThe()['Sample'])
-        
-        A = above if above is not None else any(some)
-
-        b1 = self.around(A, some)
-        target_idx = math.floor(getThe()['Far'] * len(rows))
-
-        for n, (key, val) in enumerate(b1.items()):
-            if n==target_idx:
-                B = val['row']
-        
+                
+        A = above if above is not None else any(self.rows)
+        B = self.furthest(A, rows)['row']
         c = self.dist(A, B, None)
-        mid = []
-
-        for n, (r, t) in enumerate(dict(sort(map(rows, project), 'dist')).items()):
+        
+        temp = sort(map(rows, project), 'dist')
+        for n, t in enumerate(temp):
             if n < math.floor(len(rows)/2):
                 left.append(t['row'])
                 mid = t['row']
@@ -87,18 +86,25 @@ class DATA:
                 right.append(t['row'])
         return left, right, A, B, mid, c
 
-    def cluster(self, rows, min, cols, above):
+    def cluster(self, rows=None, cols=None, above=None):
         rows = rows if rows is not None else self.rows
-        min = min if min is not None else len(rows)**getThe()['min']
-        cols = cols if cols is not None else self.cols.xcols
+        cols = cols if cols is not None else self.cols.xcols    
+
+        newrows = []
+        for row in rows:
+            r = ROW([val for val in row.cells])
+            r.x, r.y = row.x, row.y
+            newrows.append(r)
+
         node = {
-            'data': self.clone(rows)
-        }
+            'data': newrows
+        }       
         
-        if len(rows) > 2*min:
-            left, right, node['A'], node['B'], node['mid'], _c = self.half(rows, cols, above)
-            node['left'] = self.cluster(left, min, cols, node['A'])
-            node['right'] = self.cluster(right, min, cols, node['B'])
+        if len(rows) >= 2:
+            left, right, node['A'], node['B'], node['mid'], node['c'] = self.half(rows, cols, above)
+            
+            node['left'] = self.cluster(left, cols, node['A'])
+            node['right'] = self.cluster(right, cols, node['B'])
         
         return node
 

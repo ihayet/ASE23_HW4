@@ -1,5 +1,5 @@
 from collections import OrderedDict
-from utils import get_ofile
+from utils import get_ofile, last, rnd
 from lists import sort, map, kap
 import re
 
@@ -39,7 +39,7 @@ def oo(options):
     o_file = get_ofile()
     o_file.write(str(val) + '\n')
     print(val)
-    return val
+    return options
 
 def o(options):
     if isinstance(options, dict):
@@ -84,16 +84,16 @@ def coerce(s):
 
     return val
 
-def show(node, what, cols, nPlaces, lvl):
+def show(node, what=None, cols=None, nPlaces=None, lvl=None):
   o_file = get_ofile()
   if node is not None:
     lvl = lvl if lvl is not None else 0
     
-    pval = str('| '*lvl) + str(len(node['data'].rows)) + ' ' 
+    pval = str('|.. '*lvl)
     print(pval, end='')
     o_file.write(pval)
     
-    pval = o(node['data'].stats('mid', node['data'].cols.ycols, nPlaces)) if ('left' not in node or lvl==0) else '' 
+    pval = o(last(last(node['data']).cells)) if ('left' not in node) else fmt("%f", rnd(100*node['c'], 0))
     print(pval)
     o_file.write(pval + '\n')
 
