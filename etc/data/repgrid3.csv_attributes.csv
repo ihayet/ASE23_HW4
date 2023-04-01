@@ -1,0 +1,9 @@
+Bowl,Whisk,Stove,Chef,Coke,Sprite,Pizza,Pasta,Cake,Muffin,attributes!
+3,1,3,5,1,1,5,5,5,5,Liquid:Solid
+1,1,1,1,5,5,5,5,5,5,Tool:Food
+3,3,3,3,1,1,2,4,3,1,Sweet:Savory
+3,1,5,5,1,1,2,4,3,1,Cheap:Expensive
+5,5,5,5,4,4,1,1,1,1,Ephemeral:Long-lasting
+1,5,1,1,3,3,1,5,5,1,Regular-shape:Irregular-shape
+1,1,3,5,3,3,3,3,3,3,Grocery:Restaurant
+5,5,5,1,5,5,1,1,1,1,Cooked:Manufactured

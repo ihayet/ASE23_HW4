@@ -1,0 +1,11 @@
+Liquid:Solid,Tool:Food,Sweet:Savory,Cheap:Expensive,Ephemeral:Long-lasting,Regular-shape:Irregular-shape,Grocery:Restaurant,Cooked:Manufactured,examples!
+3,1,3,3,5,1,1,5,Bowl
+1,1,3,1,5,5,1,5,Whisk
+3,1,3,5,5,1,3,5,Stove
+5,1,3,5,5,1,5,1,Chef
+1,5,1,1,4,3,3,5,Coke
+1,5,1,1,4,3,3,5,Sprite
+5,5,2,2,1,1,3,1,Pizza
+5,5,4,4,1,5,3,1,Pasta
+5,5,3,3,1,5,3,1,Cake
+5,5,1,1,1,1,3,1,Muffin

@@ -1,0 +1,22 @@
+local _ = " "
+return {
+ domain="culinary talk",
+ cols={            {'Liquid', 5, 5, 5, 3, 2, 2, 4, 4, 4, 5, 'Solid'},
+                     {'Tool', 1, 1, 1, 3, 4, 4, 5, 5, 5, 5, 'Food'},
+                    {'Sweet', 3, 3, 3, 3, 1, 1, 4, 5, 1, 1, 'Savory'},
+                    {'Cheap', 4, 2, 5, 4, 1, 1, 2, 4, 4, 1, 'Expensive'},
+                {'Ephemeral', 4, 4, 5, 3, 3, 3, 2, 2, 1, 1, 'Long-lasting'},
+            {'Regular-shape', 1, 5, 1, 2, 5, 5, 1, 5, 2, 1, 'Irregular-shape'},
+                  {'Grocery', 3, 1, 1, 5, 3, 3, 4, 4, 3, 2, 'Restaurant'},
+                   {'Cooked', 5, 5, 5, 5, 5, 5, 3, 3, 3, 3, 'Manufactured'}},
+rows={                      { _, _, _, _, _, _, _, _, _, 'Muffin'},
+                            { _, _, _, _, _, _, _, _, 'Cake'},
+                            { _, _, _, _, _, _, _, 'Pasta'},
+                            { _, _, _, _, _, _, 'Pizza'},
+                            { _, _, _, _, _,  'Sprite'},
+                            { _, _, _, _,  'Coke'},
+                            { _, _, _,  'Chef'},
+                            { _, _,  'Stove'},
+                            { _, 'Whisk'},
+                            {'Bowl'}}
+}
